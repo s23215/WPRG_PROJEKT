@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .napis {
+            position: absolute;
+            top: 40px;
+            left: 38%;
+            font-size: 18px;
+        }
+        #top{
+            top: 0;
+            height: 40vh;
+            width:100%;
+            background-color: dimgrey;
+        }
+        #central{
+            height: 60vh;
+            width: 50%;
+            background-color: dimgrey;
+            float: left;
+            position: relative;
+        }
+        #form{
+            position: absolute;
+            left: 35%;
+        }
+        .side{
+            height: 60vh;
+            width: 25%;
+            background-color: dimgrey;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div id="top">
+    <div class="napis">
+        <h1>The best meme page</h1>
+    </div>
+</div>
+<div class="side"></div>
+<div id="central">
+    <div id="form">
+        <form method="POST">
+            <label for="numbers">Login :</label><br>
+            <input type="text"  name="username" placeholder="username..." value="{{ login }}"><br>
+            <input type="password"  name="password" placeholder="password..."><br>
+            <input type="submit" name="foo" value="Login"><br>
+            {% if foo %}
+                <strong>Wrong login or password!</strong>
+            {% endif %}
+        </form>
+        <br><br>
+        <h3>If you don't have an account, <a href="../register"><button>Register</button></a></h3>
+    </div>
+</div>
+<div class="side"></div>
+
+</body>
+</html>

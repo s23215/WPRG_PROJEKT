@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memes</title>
+    <style type="text/css">
+
+        body{
+            background-color: dimgrey;
+        }
+        img{
+            width: 600px;
+            height: 400px;
+        }
+        .napis {
+            text-align: center;
+            top: 40px;
+            font-size: 18px;
+        }
+        #top{
+            background-color: dimgrey;
+            margin-top: 0;
+            position: relative;
+            width: 100%;
+            height: 15vh;
+        }
+        #mid{
+            float: left;
+            background-color: dimgrey;
+            width: 100%;
+            height: 85vh;
+        }
+        .image{
+            width: 600px;
+            height: 400px;
+            padding: 10px;
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        .topright {
+            position: absolute;
+            top: 0px;
+            right: 16px;
+            font-size: 18px;
+        }
+        .topleft {
+            top: 8px;
+            left: 16px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div id="top">
+    <div class="topleft">
+        <form action="http://localhost:5000/upload" enctype="multipart/form-data" method="POST">
+            <input type="file" name="pic" />
+            <input type="submit" value="Upload a file"/>
+        </form>
+    </div>
+    <div class="napis">
+        <a href="../startPage"><h1>The best meme page</h1></a>
+    </div>
+    <div class="topright">
+        <h3>Siema {{user}} <a href="../logout"><button>Logout</button></a></h3>
+    </div>
+</div>
+<div id="mid">
+<center><div class="image">
+        <center>
+            <table>
+            {% for i in result_db %}
+             <tr><td><img src="{{i}}"></td></tr>
+            {% endfor %}
+        </table></center>
+    </div></center>
+
+</div>
+
+</body>
+</html>
